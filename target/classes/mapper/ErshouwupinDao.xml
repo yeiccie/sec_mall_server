@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cl.dao.ErshouwupinDao">
+
+    <!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cl.entity.ErshouwupinEntity" id="ershouwupinMap">
+        <result property="shangpinmingcheng" column="shangpinmingcheng"/>
+        <result property="waiguan" column="waiguan"/>
+        <result property="shangpinfenlei" column="shangpinfenlei"/>
+        <result property="pinpai" column="pinpai"/>
+        <result property="xinjiuchengdu" column="xinjiuchengdu"/>
+        <result property="yuanchanchangjia" column="yuanchanchangjia"/>
+        <result property="yongtu" column="yongtu"/>
+        <result property="juticaizhi" column="juticaizhi"/>
+        <result property="chanpinmiaoshu" column="chanpinmiaoshu"/>
+        <result property="price" column="price"/>
+        <result property="onelimittimes" column="onelimittimes"/>
+        <result property="alllimittimes" column="alllimittimes"/>
+        <result property="maijiazhanghao" column="maijiazhanghao"/>
+        <result property="maijiaxingming" column="maijiaxingming"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+        <result property="discussNumber" column="discuss_number"/>
+        <result property="storeupNumber" column="storeup_number"/>
+    </resultMap>
+
+    <select id="selectListView"
+            resultType="com.cl.entity.view.ErshouwupinView">
+
+        SELECT ershouwupin.* FROM ershouwupin ershouwupin
+        <where>1=1 ${ew.sqlSegment}</where>
+    </select>
+
+    <select id="selectView"
+            resultType="com.cl.entity.view.ErshouwupinView">
+        SELECT * FROM ershouwupin ershouwupin
+        <where>1=1 ${ew.sqlSegment}</where>
+    </select>
+
+
+</mapper>
