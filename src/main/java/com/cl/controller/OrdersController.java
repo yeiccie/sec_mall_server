@@ -30,7 +30,6 @@ public class OrdersController {
     @Autowired
     private OrdersService ordersService;
 
-
     /**
      * 后台列表
      */
@@ -54,7 +53,6 @@ public class OrdersController {
         PageUtils page = ordersService.queryPage(params, MPUtil.sort(MPUtil.between(MPUtil.likeOrEq(ew, orders), params), params));
         return R.ok().put("data", page);
     }
-
 
     /**
      * 前端列表

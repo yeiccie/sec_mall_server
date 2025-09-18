@@ -17,19 +17,15 @@ import java.util.Arrays;
 import java.util.Map;
 
 /**
- * 菜单
- * 后端接口
- *
- * @author
- * @email
- * @date 2025-03-21 13:53:14
+ * Menu
+ * @author chenbei
+ * @Date 2025-07-21 13:53:14
  */
 @RestController
 @RequestMapping("/menu")
 public class MenuController {
     @Autowired
     private MenuService menuService;
-
 
     /**
      * 后台列表

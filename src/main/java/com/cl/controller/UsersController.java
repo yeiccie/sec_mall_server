@@ -19,20 +19,16 @@ import java.util.Date;
 import java.util.Map;
 
 /**
- * 管理员
+ *
  * 后端接口
  *
- * @author
- * @email
- * @date 2025-03-21 13:53:13
+ * @Date 2025-07-21 13:53:13
  */
 @RestController
 @RequestMapping("/users")
 public class UsersController {
     @Autowired
     private UsersService usersService;
-
-
     @Autowired
     private TokenService tokenService;
 
@@ -49,7 +45,6 @@ public class UsersController {
         String token = tokenService.generateToken(u.getId(), username, "users", "管理员");
         return R.ok().put("token", token);
     }
-
 
     /**
      * 注册
@@ -68,7 +63,6 @@ public class UsersController {
         usersService.insert(users);
         return R.ok();
     }
-
 
     /**
      * 退出
@@ -103,7 +97,6 @@ public class UsersController {
         return R.ok("密码已重置为：123456");
     }
 
-
     /**
      * 后台列表
      */
@@ -116,7 +109,6 @@ public class UsersController {
         PageUtils page = usersService.queryPage(params, MPUtil.sort(MPUtil.between(MPUtil.likeOrEq(ew, users), params), params));
         return R.ok().put("data", page);
     }
-
 
     /**
      * 前端列表
@@ -173,7 +165,6 @@ public class UsersController {
         return R.ok().put("data", users);
     }
 
-
     /**
      * 后端保存
      */
@@ -204,7 +195,6 @@ public class UsersController {
         return R.ok();
     }
 
-
     /**
      * 修改
      */
@@ -215,7 +205,6 @@ public class UsersController {
         usersService.updateById(users);//全部更新
         return R.ok();
     }
-
 
     /**
      * 删除

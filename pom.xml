@@ -13,6 +13,8 @@
     <artifactId>server_code</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>springboot-schema</name>
+    <!--改为jar方式-->
+    <packaging>jar</packaging>
     <description>springboot学习框架</description>
 
     <properties>

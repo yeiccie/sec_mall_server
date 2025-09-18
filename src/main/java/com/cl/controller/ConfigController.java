@@ -39,7 +39,6 @@ public class ConfigController {
                   HttpServletRequest request) {
         EntityWrapper<ConfigEntity> ew = new EntityWrapper<ConfigEntity>();
 
-
         PageUtils page = configService.queryPage(params, MPUtil.sort(MPUtil.between(MPUtil.likeOrEq(ew, config), params), params));
         return R.ok().put("data", page);
     }
@@ -99,7 +98,6 @@ public class ConfigController {
         config = configService.selectView(new EntityWrapper<ConfigEntity>().eq("id", id));
         return R.ok().put("data", config);
     }
-
 
     /**
      * 后端保存

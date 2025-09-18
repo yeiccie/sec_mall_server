@@ -32,10 +32,8 @@ import java.util.Map;
 public class ErshouwupinController {
     @Autowired
     private ErshouwupinService ershouwupinService;
-
     @Autowired
     private StoreupService storeupService;
-
 
     /**
      * 后台列表
@@ -54,18 +52,18 @@ public class ErshouwupinController {
         return R.ok().put("data", page);
     }
 
-
     /**
-     * 前端列表
+     * 前端列表 all
      */
     @IgnoreAuth
     @RequestMapping("/list")
     public R list(@RequestParam Map<String, Object> params, ErshouwupinEntity ershouwupin,
                   HttpServletRequest request) {
         EntityWrapper<ErshouwupinEntity> ew = new EntityWrapper<ErshouwupinEntity>();
-
         PageUtils page = ershouwupinService.queryPage(params, MPUtil.sort(MPUtil.between(MPUtil.likeOrEq(ew, ershouwupin), params), params));
         return R.ok().put("data", page);
+//        ErshouwupinEntity entity = new ErshouwupinEntity();
+//        return R.ok().put("data", entity);
     }
 
     /**
@@ -110,7 +108,6 @@ public class ErshouwupinController {
         return R.ok().put("data", ershouwupin);
     }
 
-
     /**
      * 后端保存
      */
@@ -130,7 +127,6 @@ public class ErshouwupinController {
         ershouwupinService.insert(ershouwupin);
         return R.ok();
     }
-
 
     /**
      * 修改
@@ -159,7 +155,6 @@ public class ErshouwupinController {
         ershouwupinService.updateBatchById(list);
         return R.ok();
     }
-
 
     /**
      * 删除
